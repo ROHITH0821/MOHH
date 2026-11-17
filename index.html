@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MOHH Interiors — Luxury Interiors, Hyderabad</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Ccircle cx=%2232%22 cy=%2232%22 r=%2232%22 fill=%22%23C9A66B%22/%3E%3Ctext x=%2232%22 y=%2244%22 font-size=%2236%22 text-anchor=%22middle%22 font-family=%22Georgia,serif%22 fill=%22%231C1915%22%3EM%3C/text%3E%3C/svg%3E">
+<meta name="description" content="MOHH Interiors, interior planners and design studio in Hyderabad.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#7A5C2A}a:hover{color:#4F3A16}
+*{box-sizing:border-box}
+input,select,textarea,button{font:inherit}
+.nav-burger{display:none !important}
+@media (max-width: 860px){.nav-links{display:none !important}.nav-cta{display:none !important}.nav-burger{display:inline-flex !important}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<template id="view">
+
+<div style="font-family: 'Manrope', system-ui, sans-serif; color: #1C1915; background: #FFFFFF; width: 100%; min-width: 0">
+
+<!-- FLOATING CAPSULE NAV -->
+<header style="{{navStyle}}">
+<nav aria-label="Main" style="max-width: 1240px; margin: 0 auto; background: #1C1915; border: 1px solid rgba(201,166,107,0.5); border-radius: 32px; padding: 8px 8px 8px 12px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; box-shadow: 0 12px 32px rgba(28,25,21,0.18)">
+<a href="#top" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #FFFFFF; min-height: 44px">
+<span aria-hidden="true" style="width: 42px; height: 42px; border-radius: 999px; background: {{accent}}; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; color: #1C1915">M</span>
+<span style="display: flex; flex-direction: column; line-height: 1.05">
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; letter-spacing: 0.22em">MOHH</span>
+<span style="font-size: 9px; letter-spacing: 0.34em; text-transform: uppercase; color: #D9CDB9">Interiors</span>
+</span>
+</a>
+<div class="nav-links" style="display: flex; flex-wrap: wrap; align-items: center; gap: 2px; font-size: 14px; font-weight: 500; background: rgba(255,255,255,0.06); border-radius: 999px; padding: 4px">
+<a href="#regent" style="color: #F2ECE2; text-decoration: none; padding: 10px 16px; border-radius: 999px; min-height: 44px; display: inline-flex; align-items: center">The Regent</a>
+<a href="#portfolio" style="color: #F2ECE2; text-decoration: none; padding: 10px 16px; border-radius: 999px; min-height: 44px; display: inline-flex; align-items: center">Portfolio</a>
+<a href="#services" style="color: #F2ECE2; text-decoration: none; padding: 10px 16px; border-radius: 999px; min-height: 44px; display: inline-flex; align-items: center">Services</a>
+<a href="#process" style="color: #F2ECE2; text-decoration: none; padding: 10px 16px; border-radius: 999px; min-height: 44px; display: inline-flex; align-items: center">Process</a>
+</div>
+<a class="nav-cta" href="#consult" style="background: #FFFFFF; color: #1C1915; text-decoration: none; font-weight: 700; font-size: 14px; padding: 12px 22px; border-radius: 999px; min-height: 44px; display: inline-flex; align-items: center; gap: 8px">Book a visit
+<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<button type="button" class="nav-burger" onClick="{{toggleMenu}}" aria-expanded="{{menuOpenStr}}" aria-label="Menu" style="background: #FFFFFF; color: #1C1915; border: 0; border-radius: 999px; width: 46px; height: 46px; align-items: center; justify-content: center; cursor: pointer">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="{{menuIcon}}"></path></svg>
+</button>
+<sc-if value="{{menuOpen}}" hint-placeholder-val="{{false}}">
+<div style="flex: 1 1 100%; display: flex; flex-direction: column; gap: 2px; padding: 6px 4px 8px; border-top: 1px solid rgba(255,255,255,0.12)">
+<a href="#regent" onClick="{{closeMenu}}" style="color: #F2ECE2; text-decoration: none; padding: 12px 14px; border-radius: 12px; min-height: 48px; display: flex; align-items: center; font-size: 16px">The Regent</a>
+<a href="#portfolio" onClick="{{closeMenu}}" style="color: #F2ECE2; text-decoration: none; padding: 12px 14px; border-radius: 12px; min-height: 48px; display: flex; align-items: center; font-size: 16px">Portfolio</a>
+<a href="#services" onClick="{{closeMenu}}" style="color: #F2ECE2; text-decoration: none; padding: 12px 14px; border-radius: 12px; min-height: 48px; display: flex; align-items: center; font-size: 16px">Services</a>
+<a href="#process" onClick="{{closeMenu}}" style="color: #F2ECE2; text-decoration: none; padding: 12px 14px; border-radius: 12px; min-height: 48px; display: flex; align-items: center; font-size: 16px">Process</a>
+<a href="#consult" onClick="{{closeMenu}}" style="margin-top: 6px; background: #FFFFFF; color: #1C1915; text-decoration: none; font-weight: 700; padding: 14px; border-radius: 999px; min-height: 50px; display: flex; align-items: center; justify-content: center">Book a visit</a>
+</div>
+</sc-if>
+</nav>
+</header>
+
+<!-- HERO -->
+<section id="top" style="max-width: 1240px; margin: 0 auto; padding: clamp(28px, 5vw, 56px) 20px clamp(40px, 5vw, 56px); display: flex; flex-wrap: wrap; gap: clamp(32px, 5vw, 56px); align-items: center">
+<div style="flex: 1 1 min(460px, 100%); min-width: 0">
+<p style="margin: 0 0 22px; display: inline-flex; align-items: center; gap: 12px; font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; color: #7A5C2A"><span style="width: 36px; height: 1px; background: {{accent}}"></span>Luxury interiors · Hyderabad</p>
+<h1 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(44px, 9vw, 86px); line-height: 0.98; color: #1C1915">Designed in light.<br><span style="font-style: italic; color: #7A5C2A">Built to last.</span></h1>
+<p style="margin: 28px 0 0; max-width: 490px; font-size: 18px; line-height: 1.65; color: #5F574D">Backlit stone, warm timber and quiet gold details. Reema Deb and the MOHH studio design and deliver complete homes, from the first sketch to the final styled room.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px">
+<a href="#consult" style="background: #1C1915; color: #FFFFFF; text-decoration: none; font-weight: 600; padding: 16px 28px; border-radius: 999px; min-height: 52px; display: inline-flex; align-items: center">Book a free consultation</a>
+<a href="#portfolio" style="border: 1px solid #1C1915; color: #1C1915; text-decoration: none; font-weight: 600; padding: 16px 28px; border-radius: 999px; min-height: 52px; display: inline-flex; align-items: center">View our homes</a>
+</div>
+<div style="margin-top: 44px; display: flex; flex-wrap: wrap; gap: 10px">
+<span style="border: 1px solid #E6DED2; border-radius: 999px; padding: 8px 16px; font-size: 13px; color: #5F574D">Living &amp; media walls</span>
+<span style="border: 1px solid #E6DED2; border-radius: 999px; padding: 8px 16px; font-size: 13px; color: #5F574D">Modular kitchens</span>
+<span style="border: 1px solid #E6DED2; border-radius: 999px; padding: 8px 16px; font-size: 13px; color: #5F574D">Wardrobes</span>
+<span style="border: 1px solid #E6DED2; border-radius: 999px; padding: 8px 16px; font-size: 13px; color: #5F574D">Mandirs</span>
+</div>
+</div>
+<div style="flex: 1 1 min(520px, 100%); min-width: 0; position: relative; padding-bottom: 40px">
+<img src="images/hero-living.jpg" alt="Living room with a backlit stone TV wall, cove ceiling and gold-inlay panels" style="width: 100%; height: clamp(380px, 90vw, 620px); object-fit: cover; display: block; border-radius: clamp(140px, 30vw, 260px) clamp(140px, 30vw, 260px) 10px 10px">
+<a href="#regent" style="position: absolute; left: clamp(10px, 2vw, 0px); bottom: 0; max-width: calc(100% - 20px); background: #FFFFFF; border-radius: 14px; padding: 10px 18px 10px 10px; display: flex; align-items: center; gap: 14px; text-decoration: none; color: #1C1915; box-shadow: 0 18px 40px rgba(28,25,21,0.16)">
+<img src="images/regent-timber-ceiling.jpg" alt="" style="width: 76px; height: 76px; object-fit: cover; border-radius: 10px; flex: none">
+<span style="display: flex; flex-direction: column; gap: 3px">
+<span style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #7A5C2A">Recently completed</span>
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 500">The Regent</span>
+</span>
+</a>
+</div>
+</section>
+
+<!-- MATERIAL LINE -->
+<section aria-label="Materials" style="border-top: 1px solid #EEE7DC; border-bottom: 1px solid #EEE7DC">
+<div style="max-width: 1240px; margin: 0 auto; padding: 22px 20px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 18px; font-family: 'Cormorant Garamond', serif; font-size: clamp(18px, 2.6vw, 24px); font-style: italic; color: #5F574D">
+<span>Natural stone</span><span style="color: {{accent}}">·</span><span>Walnut veneer</span><span style="color: {{accent}}">·</span><span>Fluted panels</span><span style="color: {{accent}}">·</span><span>Gold inlay</span><span style="color: {{accent}}">·</span><span>Cove lighting</span><span style="color: {{accent}}">·</span><span>Hand-cut jaali</span>
+</div>
+</section>
+
+<!-- THE REGENT -->
+<section id="regent" style="max-width: 1240px; margin: 0 auto; padding: clamp(64px, 10vw, 110px) 20px clamp(40px, 6vw, 60px)">
+<div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-end; justify-content: space-between; margin-bottom: 40px">
+<div style="flex: 1 1 min(420px, 100%); min-width: 0">
+<p style="margin: 0 0 12px; font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; color: #7A5C2A">Featured project · Recently completed</p>
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(42px, 7.5vw, 70px); line-height: 1; color: #1C1915">The Regent</h2>
+</div>
+<p style="flex: 1 1 min(380px, 100%); min-width: 0; margin: 0; font-size: 17px; line-height: 1.7; color: #5F574D">A full home shaped around light: sculpted cove ceilings in every bedroom, panelled living walls, a timber-clad lounge ceiling and a calm, handle-less kitchen.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 18px">
+<figure style="margin: 0; flex: 3 1 min(560px, 100%); min-width: 0; position: relative">
+<img src="{{regentMain.src}}" alt="{{regentMain.alt}}" style="width: 100%; height: clamp(300px, 60vw, 580px); object-fit: cover; display: block; border-radius: 12px">
+<figcaption style="position: absolute; left: 18px; bottom: 18px; background: #FFFFFF; padding: 10px 18px; border-radius: 999px; font-size: 13px; font-weight: 600; color: #1C1915">{{regentMain.caption}}</figcaption>
+</figure>
+<div style="flex: 2 1 min(320px, 100%); min-width: 0; display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0 0 4px; font-size: 13px; color: #5F574D">Tap a room to view it</p>
+<sc-for list="{{regent}}" as="r" hint-placeholder-count="5">
+<button type="button" onClick="{{r.pick}}" aria-pressed="{{r.pressed}}" style="{{r.style}}">
+<img src="{{r.src}}" alt="" style="width: 76px; height: 76px; object-fit: cover; border-radius: 8px; flex: none; display: block">
+<span style="display: flex; flex-direction: column; gap: 3px; text-align: left">
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 18px; color: #7A5C2A">{{r.num}}</span>
+<span style="font-size: 15px; font-weight: 600; color: #1C1915">{{r.caption}}</span>
+</span>
+</button>
+</sc-for>
+</div>
+</div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" style="background: #F7F4EF">
+<div style="max-width: 1240px; margin: 0 auto; padding: clamp(64px, 9vw, 100px) 20px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 32px">
+<div>
+<p style="margin: 0 0 12px; font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; color: #7A5C2A">Portfolio</p>
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(38px, 6.5vw, 58px); line-height: 1.02; color: #1C1915">Homes we have made</h2>
+</div>
+<p style="margin: 0; max-width: 420px; font-size: 16px; line-height: 1.7; color: #5F574D">Browse by project. Every photo is from a home MOHH designed and delivered in Hyderabad.</p>
+</div>
+<div role="group" aria-label="Filter by project" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px">
+<sc-for list="{{filters}}" as="f" hint-placeholder-count="6">
+<button type="button" onClick="{{f.pick}}" aria-pressed="{{f.pressed}}" style="{{f.style}}">{{f.label}}</button>
+</sc-for>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E6DED2; border-radius: 12px; padding: 18px 22px; margin-bottom: 22px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px">
+<div>
+<p style="margin: 0; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: #7A5C2A">{{projectKicker}}</p>
+<p style="margin: 4px 0 0; font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 500; color: #1C1915">{{projectTitle}}</p>
+</div>
+<p style="margin: 0; max-width: 520px; font-size: 14px; line-height: 1.6; color: #5F574D">{{projectNote}}</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(270px, 100%), 1fr)); gap: 18px">
+<sc-for list="{{gallery}}" as="g" hint-placeholder-count="8">
+<figure style="margin: 0; background: #FFFFFF; border-radius: 12px; overflow: hidden; min-width: 0">
+<img src="{{g.src}}" alt="{{g.alt}}" style="width: 100%; height: clamp(260px, 60vw, 380px); object-fit: cover; display: block">
+<figcaption style="padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; gap: 10px">
+<span style="font-size: 14px; font-weight: 600; color: #1C1915">{{g.caption}}</span>
+<span style="font-size: 12px; font-weight: 600; color: #7A5C2A; background: #F7F4EF; border-radius: 999px; padding: 4px 10px; white-space: nowrap">{{g.room}}</span>
+</figcaption>
+</figure>
+</sc-for>
+</div>
+<p style="margin: 22px 0 0; font-size: 14px; color: #5F574D">Showing {{shownCount}} photos</p>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" style="max-width: 1240px; margin: 0 auto; padding: clamp(64px, 10vw, 110px) 20px">
+<div style="display: flex; flex-wrap: wrap; gap: 56px; align-items: flex-start">
+<div style="flex: 1 1 min(520px, 100%); min-width: 0">
+<p style="margin: 0 0 12px; font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; color: #7A5C2A">Services</p>
+<h2 style="margin: 0 0 36px; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(36px, 6vw, 56px); line-height: 1.04; color: #1C1915">One studio. Every room. Start to finish.</h2>
+<div style="border-top: 1px solid #E6DED2">
+<sc-for list="{{services}}" as="s" hint-placeholder-count="6">
+<div style="border-bottom: 1px solid #E6DED2">
+<button type="button" onClick="{{s.pick}}" aria-expanded="{{s.expandedStr}}" style="width: 100%; background: transparent; border: 0; color: #1C1915; padding: 22px 0; min-height: 64px; display: flex; align-items: center; gap: 20px; text-align: left; cursor: pointer">
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 20px; color: #7A5C2A; width: 32px">{{s.num}}</span>
+<span style="flex: 1; font-size: 20px; font-weight: 600">{{s.title}}</span>
+<span aria-hidden="true" style="width: 34px; height: 34px; border-radius: 999px; border: 1px solid #D9D0C2; display: flex; align-items: center; justify-content: center; font-size: 18px; color: #1C1915">{{s.icon}}</span>
+</button>
+<sc-if value="{{s.expanded}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0 0 24px 52px; max-width: 520px; font-size: 16px; line-height: 1.7; color: #5F574D">{{s.text}}</p>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="flex: 1 1 min(420px, 100%); min-width: 0; position: relative">
+<img src="{{activeService.img}}" alt="{{activeService.alt}}" style="width: 100%; height: clamp(320px, 70vw, 600px); object-fit: cover; display: block; border-radius: 12px">
+<p style="position: absolute; left: 16px; bottom: 16px; margin: 0; background: #FFFFFF; padding: 10px 16px; border-radius: 999px; font-size: 13px; font-weight: 600; color: #1C1915">{{activeService.title}}</p>
+</div>
+</div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" style="border-top: 1px solid #EEE7DC">
+<div style="max-width: 1240px; margin: 0 auto; padding: clamp(64px, 9vw, 100px) 20px">
+<p style="margin: 0 0 12px; font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; color: #7A5C2A">How we work</p>
+<h2 style="margin: 0 0 48px; max-width: 760px; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(36px, 6vw, 54px); line-height: 1.04; color: #1C1915">A calm process, from first visit to final key.</h2>
+<ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr)); gap: 28px">
+<li style="border-top: 2px solid #1C1915; padding-top: 20px"><p style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 44px; line-height: 1; color: #7A5C2A">01</p><h3 style="margin: 16px 0 8px; font-size: 19px; color: #1C1915">Consultation</h3><p style="margin: 0; font-size: 15px; line-height: 1.65; color: #5F574D">A home visit to understand how you live, your style and your budget.</p></li>
+<li style="border-top: 2px solid #1C1915; padding-top: 20px"><p style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 44px; line-height: 1; color: #7A5C2A">02</p><h3 style="margin: 16px 0 8px; font-size: 19px; color: #1C1915">Concept &amp; 3D</h3><p style="margin: 0; font-size: 15px; line-height: 1.65; color: #5F574D">See every room in 3D, with materials you can touch, before work begins.</p></li>
+<li style="border-top: 2px solid #1C1915; padding-top: 20px"><p style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 44px; line-height: 1; color: #7A5C2A">03</p><h3 style="margin: 16px 0 8px; font-size: 19px; color: #1C1915">Execution</h3><p style="margin: 0; font-size: 15px; line-height: 1.65; color: #5F574D">One team on site, with progress photos shared on WhatsApp.</p></li>
+<li style="border-top: 2px solid {{accent}}; padding-top: 20px"><p style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 44px; line-height: 1; color: #7A5C2A">04</p><h3 style="margin: 16px 0 8px; font-size: 19px; color: #1C1915">Handover</h3><p style="margin: 0; font-size: 15px; line-height: 1.65; color: #5F574D">A finished, styled home, ready for you to move in.</p></li>
+</ol>
+</div>
+</section>
+
+<!-- STUDIO -->
+<section style="background: #F7F4EF">
+<div style="max-width: 1240px; margin: 0 auto; padding: clamp(64px, 9vw, 100px) 20px; display: flex; flex-wrap: wrap; gap: clamp(32px, 5vw, 56px); align-items: center">
+<div style="flex: 1 1 min(420px, 100%); min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px">
+<img src="images/krishna-partition.jpg" alt="Walnut partition framing a backlit Krishna artwork" style="width: 100%; height: clamp(220px, 45vw, 420px); object-fit: cover; display: block; border-radius: 12px">
+<img src="images/mandir-jaali.jpg" alt="Backlit jaali mandir with Ganesha motif" style="width: 100%; height: clamp(220px, 45vw, 420px); object-fit: cover; display: block; border-radius: 12px; margin-top: 48px">
+</div>
+<div style="flex: 1 1 min(440px, 100%); min-width: 0">
+<p style="margin: 0 0 12px; font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; color: #7A5C2A">The studio</p>
+<h2 style="margin: 0 0 22px; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(36px, 6vw, 54px); line-height: 1.04; color: #1C1915">Led by Reema Deb</h2>
+<p style="margin: 0 0 16px; font-size: 17px; line-height: 1.75; color: #5F574D">MOHH Interior Planners &amp; Design Studio creates homes that feel personal and lasting. Reema leads every project herself, from the first conversation to the final styled room.</p>
+<p style="margin: 0; font-size: 17px; line-height: 1.75; color: #5F574D">Based in Punjagutta, the studio works across Hyderabad on villas, premium apartments and full-home renovations.</p>
+</div>
+</div>
+</section>
+
+<!-- CONSULTATION -->
+<section id="consult" style="max-width: 1240px; margin: 0 auto; padding: clamp(64px, 10vw, 110px) 20px">
+<div style="background: #1C1915; border-radius: clamp(18px, 3vw, 28px); padding: clamp(28px, 5vw, 56px) clamp(18px, 4vw, 48px); display: flex; flex-wrap: wrap; gap: 48px; color: #EDE6DA">
+<div style="flex: 1 1 min(340px, 100%); min-width: 0">
+<p style="margin: 0 0 12px; font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; color: #E2CFA6">Free consultation</p>
+<h2 style="margin: 0 0 20px; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(36px, 6vw, 54px); line-height: 1.04; color: #FFFFFF">Tell us about your home.</h2>
+<p style="margin: 0 0 28px; font-size: 16px; line-height: 1.7; color: #D9CDB9">Takes 30 seconds. You will get a WhatsApp message from MOHH right away to pick a consultation time.</p>
+<a href="https://wa.me/919989621171" style="display: inline-flex; align-items: center; gap: 12px; color: #FFFFFF; text-decoration: none; min-height: 44px; font-size: 15px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E2CFA6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.6 7.3L3 20l1.3-5.1A8.5 8.5 0 1 1 21 11.5z"></path></svg>+91 99896 21171</a>
+<p style="margin: 10px 0 0; font-size: 14px; line-height: 1.6; color: #D9CDB9">Ishwarya Nilayam, Dwarakapuri Colony, Punjagutta, Hyderabad 500082</p>
+</div>
+<div style="flex: 1 1 min(520px, 100%); min-width: 0; background: #FFFFFF; color: #1C1915; padding: clamp(20px, 4vw, 34px); border-radius: 18px">
+<sc-if value="{{notSent}}" hint-placeholder-val="{{true}}">
+<form aria-label="Consultation request" style="display: flex; flex-direction: column; gap: 22px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(210px, 100%), 1fr)); gap: 16px">
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 600">Your name<input type="text" value="{{name}}" onChange="{{onName}}" placeholder="Full name" style="padding: 14px 16px; border: 1px solid #D9D0C2; border-radius: 10px; font-size: 15px; min-height: 50px; color: #1C1915"></label>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 600">WhatsApp number<input type="tel" value="{{phone}}" onChange="{{onPhone}}" placeholder="+91" style="padding: 14px 16px; border: 1px solid #D9D0C2; border-radius: 10px; font-size: 15px; min-height: 50px; color: #1C1915"></label>
+</div>
+<fieldset style="border: 0; margin: 0; padding: 0">
+<legend style="font-size: 13px; font-weight: 600; margin-bottom: 10px">Your home</legend>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{homeTypes}}" as="h" hint-placeholder-count="4">
+<button type="button" onClick="{{h.pick}}" aria-pressed="{{h.pressed}}" style="{{h.style}}">{{h.label}}</button>
+</sc-for>
+</div>
+</fieldset>
+<fieldset style="border: 0; margin: 0; padding: 0">
+<legend style="font-size: 13px; font-weight: 600; margin-bottom: 10px">When do you want to start?</legend>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{timelines}}" as="t" hint-placeholder-count="4">
+<button type="button" onClick="{{t.pick}}" aria-pressed="{{t.pressed}}" style="{{t.style}}">{{t.label}}</button>
+</sc-for>
+</div>
+</fieldset>
+<button type="button" onClick="{{submit}}" style="background: #1C1915; color: #FFFFFF; border: 0; border-radius: 999px; padding: 18px 28px; font-size: 16px; font-weight: 700; min-height: 56px; cursor: pointer">Request my consultation</button>
+<p style="margin: 0; font-size: 13px; line-height: 1.6; color: #5F574D">Your details go only to the MOHH team.</p>
+</form>
+</sc-if>
+<sc-if value="{{sent}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-direction: column; gap: 18px; padding: 8px 0">
+<span aria-hidden="true" style="width: 56px; height: 56px; border-radius: 999px; background: #F3EBDC; display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7A5C2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 40px; color: #1C1915">Thank you, {{firstName}}.</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.7; color: #5F574D">Check WhatsApp: MOHH has just sent you photos from The Regent and times for a consultation on your {{summary}}.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a href="whatsapp.html" style="background: #1C1915; color: #FFFFFF; text-decoration: none; font-weight: 600; padding: 14px 22px; border-radius: 999px; min-height: 48px; display: inline-flex; align-items: center">See the WhatsApp reply</a>
+<a href="crm.html" style="border: 1px solid #D9D0C2; color: #1C1915; text-decoration: none; font-weight: 600; padding: 14px 22px; border-radius: 999px; min-height: 48px; display: inline-flex; align-items: center">See it in the CRM</a>
+<button type="button" onClick="{{reset}}" style="background: transparent; border: 0; color: #7A5C2A; font-weight: 600; min-height: 48px; padding: 0 8px; cursor: pointer">Start again</button>
+</div>
+</div>
+</sc-if>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer style="border-top: 1px solid #EEE7DC">
+<div style="max-width: 1240px; margin: 0 auto; padding: 48px 20px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px">
+<div>
+<p style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 600; letter-spacing: 0.2em; color: #1C1915">MOHH</p>
+<p style="margin: 4px 0 0; font-size: 11px; letter-spacing: 0.26em; text-transform: uppercase; color: #5F574D">Interior Planners &amp; Design Studio</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 24px; font-size: 14px; align-items: center">
+<a href="#regent" style="color: #1C1915; text-decoration: none">The Regent</a>
+<a href="#portfolio" style="color: #1C1915; text-decoration: none">Portfolio</a>
+<a href="#services" style="color: #1C1915; text-decoration: none">Services</a>
+<a href="#consult" style="color: #1C1915; text-decoration: none">Contact</a>
+<a href="crm.html" style="font-weight: 700; text-decoration: none">See the CRM behind this site</a>
+</div>
+</div>
+<div style="max-width: 1240px; margin: 0 auto; padding: 18px 20px 96px 20px; border-top: 1px solid #EEE7DC; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 12px; color: #5F574D">
+<span>MOHH Interiors · Punjagutta, Hyderabad</span>
+<a href="https://webauraindia.com" style="color: #1C1915; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; min-height: 44px">Demo by <span style="text-decoration: underline; text-underline-offset: 3px; color: #7A5C2A">WebAura</span>
+<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
+</div>
+</footer>
+
+<a href="https://wa.me/919989621171" aria-label="Chat with MOHH on WhatsApp" style="position: fixed; right: 22px; bottom: 22px; z-index: 40; width: 60px; height: 60px; border-radius: 999px; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 26px rgba(37,211,102,0.35)">
+<svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"></path></svg>
+</a>
+
+</div>
+</template>
+<script type="text/x-dc">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { filter: 'all', service: 0, regent: 0, name: '', phone: '', home: 'Apartment', timeline: 'Within 30 days', sent: false, navHidden: false, menuOpen: false };
+    this.lastY = 0;
+    this.onScroll = (e) => {
+      const t = e && e.target;
+      const y = (!t || t === document || t === document.documentElement || t === document.body)
+        ? (window.scrollY || document.documentElement.scrollTop || 0)
+        : (t.scrollTop || 0);
+      const dy = y - this.lastY;
+      if (Math.abs(dy) < 6) return;
+      // Scrolling down hides the navbar; scrolling up brings it back. Always shown near the top.
+      const hide = y > 120 && dy > 0;
+      this.lastY = y;
+      if (this.state.menuOpen) return;
+      if (hide !== this.state.navHidden) this.setState({ navHidden: hide });
+    };
+  }
+  componentDidMount() {
+    document.addEventListener('scroll', this.onScroll, { passive: true, capture: true });
+  }
+  componentWillUnmount() {
+    document.removeEventListener('scroll', this.onScroll, { capture: true });
+  }
+  renderVals() {
+    const B = 'images/';
+    const s = this.state;
+    const pill = on => 'border-radius: 999px; padding: 10px 18px; min-height: 44px; font-size: 14px; font-weight: 600; cursor: pointer; ' +
+      (on ? 'background: #1C1915; color: #FFFFFF; border: 1px solid #1C1915' : 'background: #FFFFFF; color: #1C1915; border: 1px solid #D9D0C2');
+
+    const regentData = [
+      ['regent-timber-ceiling.jpg', 'Lounge under a timber-clad ceiling with linear lights', 'Timber-clad lounge ceiling'],
+      ['regent-bedroom-cove.jpg', 'Bedroom with a warm cove-lit ceiling', 'Cove-lit master bedroom'],
+      ['regent-panelled-living.jpg', 'Living room with framed panel mouldings', 'Panelled living walls'],
+      ['regent-cove-curve.jpg', 'Bedroom with a curved cove ceiling', 'Curved cove ceiling'],
+      ['regent-kitchen.jpg', 'U-shaped grey modular kitchen', 'Handle-less kitchen']
+    ];
+    const regent = regentData.map((r, i) => ({
+      src: B + r[0], caption: r[2], num: '0' + (i + 1), pressed: String(s.regent === i),
+      style: 'display: flex; align-items: center; gap: 16px; width: 100%; padding: 8px; border-radius: 12px; cursor: pointer; min-height: 92px; ' +
+        (s.regent === i ? 'background: #F7F4EF; border: 1px solid #C9A66B' : 'background: #FFFFFF; border: 1px solid #EEE7DC'),
+      pick: () => this.setState({ regent: i })
+    }));
+    const rm = regentData[s.regent];
+    const regentMain = { src: B + rm[0], alt: rm[1], caption: rm[2] };
+
+    // Projects exactly as Reema labelled each album on WhatsApp
+    const PROJECTS = {
+      candeur: { name: 'Candeur 40, Miyapur', note: 'Backlit stone media wall, a walnut Krishna partition, linear-lit ceilings and wardrobes with fine gold lines.' },
+      brigade: { name: 'Brigade, Erragadda', note: 'A stone media wall with brass pendant, marble-panel foyer, blush gloss kitchen and a backlit jaali mandir.' },
+      aparna: { name: 'Aparna Serenity', note: 'Grey gloss kitchens with stone backsplash, a mirrored crockery unit, a backlit glass mandir and gold-inlay wardrobes.' },
+      prestige: { name: 'Prestige Tranquil', note: 'Floor-to-ceiling gloss wardrobes, a rose-gloss kitchen and walnut display partitions.' },
+      regent: { name: 'The Regent', note: 'Recent work: cove-lit bedrooms, panelled living walls, a timber-clad ceiling and a handle-less kitchen.' }
+    };
+    const all = [
+      ['hero-living.jpg', 'Backlit stone TV wall with cove ceiling', 'Backlit stone media wall', 'candeur'],
+      ['krishna-partition.jpg', 'Walnut partition with backlit Krishna artwork', 'Krishna partition', 'candeur'],
+      ['candeur-triangle-ceiling.jpg', 'Bedroom with a triangular linear-lit ceiling', 'Linear-lit ceiling', 'candeur'],
+      ['stone-feature-wall.jpg', 'Natural stone feature wall with floating shelves', 'Stone feature wall', 'candeur'],
+      ['candeur-wardrobe-cove.jpg', 'Bedroom with a veneer wardrobe and window seat', 'Veneer wardrobe & seat', 'candeur'],
+      ['candeur-pooja-arch.jpg', 'Backlit arch pooja niche with stone top', 'Arched pooja niche', 'candeur'],
+      ['candeur-study.jpg', 'Study unit with gold-edged shelf', 'Study corner', 'candeur'],
+      ['tv-wall-stone.jpg', 'Stone TV wall with gold inlay and brass pendant', 'Stone media wall', 'brigade'],
+      ['brigade-marble-foyer.jpg', 'Marble-panel foyer with walnut frames', 'Marble-panel foyer', 'brigade'],
+      ['kitchen-blush.jpg', 'Blush gloss L-shaped kitchen', 'Blush gloss kitchen', 'brigade'],
+      ['brigade-zigzag-wardrobe.jpg', 'Wardrobe with chevron gold inlay', 'Chevron-inlay wardrobe', 'brigade'],
+      ['brigade-dining-kitchen.jpg', 'Dining area with linear lights and marble wall', 'Dining & wash area', 'brigade'],
+      ['mandir-jaali.jpg', 'Backlit jaali mandir with Ganesha motif', 'Backlit jaali mandir', 'brigade'],
+      ['aparna-kitchen.jpg', 'Grey gloss kitchen with stone backsplash', 'Grey gloss kitchen', 'aparna'],
+      ['crockery-unit.jpg', 'Crockery unit with mirrored backsplash', 'Mirrored crockery unit', 'aparna'],
+      ['mandir-glass.jpg', 'Glass mandir with backlit Om motif', 'Backlit glass mandir', 'aparna'],
+      ['wardrobe-gold-inlay.jpg', 'Sliding wardrobe with geometric gold inlay', 'Gold-inlay wardrobe', 'aparna'],
+      ['aparna-stone-vanity.jpg', 'Stone-clad wash area with backlit mirror', 'Stone wash area', 'aparna'],
+      ['aparna-kitchen-corner.jpg', 'L-shaped grey kitchen with under-cabinet lights', 'Kitchen corner', 'aparna'],
+      ['wardrobe-tall.jpg', 'Tall gloss wardrobe with walnut band', 'Floor-to-ceiling wardrobe', 'prestige'],
+      ['prestige-kitchen.jpg', 'Rose gloss kitchen with under-cabinet lights', 'Rose gloss kitchen', 'prestige'],
+      ['partition-art.jpg', 'Walnut display partition with artwork', 'Display partition', 'prestige'],
+      ['prestige-partition.jpg', 'Walnut partition with mirror inlay under a cove ceiling', 'Mirror-inlay partition', 'prestige'],
+      ['prestige-wardrobe-dresser.jpg', 'Textured wardrobe with dresser', 'Wardrobe & dresser', 'prestige'],
+      ['regent-timber-ceiling.jpg', 'Lounge under a timber-clad ceiling', 'Timber-clad lounge ceiling', 'regent'],
+      ['regent-bedroom-cove.jpg', 'Bedroom with a warm cove-lit ceiling', 'Cove-lit bedroom', 'regent'],
+      ['regent-panelled-living.jpg', 'Living room with panel mouldings', 'Panelled living walls', 'regent'],
+      ['regent-cove-curve.jpg', 'Bedroom with a curved cove ceiling', 'Curved cove ceiling', 'regent'],
+      ['regent-kitchen.jpg', 'Handle-less grey modular kitchen', 'Handle-less kitchen', 'regent']
+    ].map(g => ({ src: B + g[0], alt: g[1], caption: g[2], cat: g[3], room: PROJECTS[g[3]].name }));
+    const order = ['candeur', 'brigade', 'aparna', 'prestige', 'regent'];
+    const mixed = [];
+    for (let k = 0; k < 3; k++) order.forEach(p => { const x = all.filter(g => g.cat === p)[k]; if (x) mixed.push(x); });
+    const gallery = s.filter === 'all' ? mixed : all.filter(g => g.cat === s.filter);
+    const filters = [['all', 'All projects']].concat(order.map(p => [p, PROJECTS[p].name])).map(([key, label]) => {
+      const on = s.filter === key;
+      const n = key === 'all' ? mixed.length : all.filter(g => g.cat === key).length;
+      return { label, count: String(n), pressed: String(on),
+        style: 'border-radius: 999px; padding: 10px 20px; min-height: 46px; font-size: 14px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; ' +
+          (on ? 'background: #1C1915; color: #FFFFFF; border: 1px solid #1C1915; box-shadow: 0 6px 16px rgba(28,25,21,0.18)' : 'background: #FFFFFF; color: #1C1915; border: 1px solid #D9D0C2'),
+        countStyle: 'font-size: 12px; font-weight: 700; border-radius: 999px; padding: 2px 8px; ' + (on ? 'background: #C9A66B; color: #1C1915' : 'background: #F3EEE6; color: #5F574D'),
+        pick: () => this.setState({ filter: key }) };
+    });
+    const proj = PROJECTS[s.filter];
+    const projectKicker = proj ? 'Project' : 'All projects';
+    const projectTitle = proj ? proj.name : 'Five homes across Hyderabad';
+    const projectNote = proj ? proj.note : 'Candeur 40 Miyapur, Brigade Erragadda, Aparna Serenity, Prestige Tranquil and The Regent. Choose a project to see more of it.';
+
+    const svc = [
+      ['Full-home interiors', 'Space planning, 3D design, execution and styling under one contract, with one point of contact from start to finish.', 'hero-living.jpg', 'Living room with backlit stone wall'],
+      ['Living & media walls', 'Stone, fluted and backlit feature walls built as the heart of the room, with hidden wiring and display niches.', 'tv-wall-stone.jpg', 'Backlit stone media wall'],
+      ['Modular kitchens', 'Gloss, matte and handle-less kitchens with smart storage, stone counters and under-cabinet lighting.', 'kitchen-blush.jpg', 'Blush gloss kitchen'],
+      ['Wardrobes & storage', 'Floor-to-ceiling wardrobes, window seats and study units, finished with inlay and veneer detail.', 'wardrobe-gold-inlay.jpg', 'Gold-inlay wardrobe'],
+      ['Ceilings & lighting', 'Cove, linear and timber ceilings, planned together with a full lighting layout for every room.', 'regent-bedroom-cove.jpg', 'Cove-lit bedroom ceiling'],
+      ['Mandirs & partitions', 'Jaali, backlit glass and walnut pooja units and partitions, made to order for your home.', 'mandir-jaali.jpg', 'Backlit jaali mandir']
+    ];
+    const services = svc.map((v, i) => ({ num: '0' + (i + 1), title: v[0], text: v[1], expanded: s.service === i, expandedStr: String(s.service === i), icon: s.service === i ? '−' : '+', pick: () => this.setState({ service: i }) }));
+    const a = svc[s.service];
+    const activeService = { img: B + a[2], alt: a[3], title: a[0] };
+
+    const homeTypes = ['Apartment', 'Villa', 'Independent house', 'Single rooms']
+      .map(l => ({ label: l, pressed: String(s.home === l), style: pill(s.home === l), pick: () => this.setState({ home: l }) }));
+    const timelines = ['Immediately', 'Within 30 days', 'Within 45 days', 'Just exploring']
+      .map(l => ({ label: l, pressed: String(s.timeline === l), style: pill(s.timeline === l), pick: () => this.setState({ timeline: l }) }));
+
+    const firstName = (s.name.trim().split(' ')[0]) || 'there';
+    return {
+      accent: this.props.accent ?? '#C9A66B',
+      navStyle: 'position: sticky; top: 0; z-index: 30; padding: 14px 20px 0; transition: transform 0.35s ease, opacity 0.35s ease; ' +
+        (s.navHidden ? 'transform: translateY(-130%); opacity: 0; pointer-events: none' : 'transform: translateY(0); opacity: 1'),
+      menuOpen: s.menuOpen, menuOpenStr: String(s.menuOpen), menuIcon: s.menuOpen ? 'M6 6l12 12M18 6L6 18' : 'M4 7h16M4 12h16M4 17h16',
+      toggleMenu: () => this.setState({ menuOpen: !s.menuOpen }), closeMenu: () => this.setState({ menuOpen: false }),
+      projectKicker, projectTitle, projectNote,
+      regent, regentMain, filters, gallery, shownCount: String(gallery.length), services, activeService,
+      homeTypes, timelines, name: s.name, phone: s.phone,
+      onName: (e) => this.setState({ name: e.target.value }),
+      onPhone: (e) => this.setState({ phone: e.target.value }),
+      submit: () => this.setState({ sent: true }),
+      reset: () => this.setState({ sent: false, name: '', phone: '' }),
+      sent: s.sent, notSent: !s.sent, firstName,
+      summary: s.home.toLowerCase()
+    };
+  }
+}
+</script>
+<script src="js/preact.min.js"></script>
+<script src="js/dc.js"></script>
+</body>
+</html>

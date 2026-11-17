@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MOHH CRM — Instant WhatsApp reply</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Ccircle cx=%2232%22 cy=%2232%22 r=%2232%22 fill=%22%23C9A66B%22/%3E%3Ctext x=%2232%22 y=%2244%22 font-size=%2236%22 text-anchor=%22middle%22 font-family=%22Georgia,serif%22 fill=%22%231C1915%22%3EM%3C/text%3E%3C/svg%3E">
+<meta name="description" content="MOHH Interiors, interior planners and design studio in Hyderabad.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#8A6A35}a:hover{color:#5E4622}
+*{box-sizing:border-box}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<template id="view">
+
+<div style="width: 390px; height: 844px; font-family: 'Manrope', system-ui, sans-serif; background: #EDE6DA; display: flex; flex-direction: column; overflow: hidden">
+
+<header style="background: #1E1A16; color: #F7F3EC; padding: 18px 16px; display: flex; align-items: center; gap: 12px">
+<div aria-hidden="true" style="width: 40px; height: 40px; border-radius: 999px; background: #C9A66B; color: #1E1A16; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; letter-spacing: 0.08em">MOHH</div>
+<div>
+<p style="margin: 0; font-size: 16px; font-weight: 600">MOHH Interiors</p>
+<p style="margin: 2px 0 0; font-size: 12px; color: #CFC4B3">Business account</p>
+</div>
+</header>
+
+<div style="flex: 1 1 auto; padding: 14px 12px; display: flex; flex-direction: column; gap: 10px; overflow: hidden; font-size: 14px; line-height: 1.45; color: #1E1A16">
+<p style="align-self: center; margin: 0 0 4px; font-size: 11px; color: #6B5D4C; background: #F7F3EC; padding: 4px 10px; border-radius: 999px">Today · 9:42 AM</p>
+
+<div style="align-self: flex-start; max-width: 86%; background: #FFFFFF; border-radius: 4px 12px 12px 12px; padding: 10px 12px">Hi Ananya, thank you for contacting MOHH Interiors. Reema and the team would love to help with your 3BHK in Kokapet.</div>
+
+<div style="align-self: flex-start; max-width: 86%; background: #FFFFFF; border-radius: 12px; padding: 6px; overflow: hidden">
+<img src="images/regent-timber-ceiling.jpg" alt="The Regent living room with timber ceiling" style="width: 100%; height: 150px; object-fit: cover; display: block; border-radius: 8px">
+<p style="margin: 8px 6px 4px">A look at our recent project, <strong>The Regent</strong>.</p>
+</div>
+
+<div style="align-self: flex-start; max-width: 86%; background: #FFFFFF; border-radius: 12px; padding: 10px 12px">
+<p style="margin: 0 0 10px">When would you like your free consultation?</p>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="display: block; text-align: center; border: 1px solid #D9CDB9; border-radius: 8px; padding: 9px; font-weight: 600; color: #8A6A35">Thu, 11:00 AM</span>
+<span style="display: block; text-align: center; border: 1px solid #D9CDB9; border-radius: 8px; padding: 9px; font-weight: 600; color: #8A6A35">Fri, 4:00 PM</span>
+<span style="display: block; text-align: center; border: 1px solid #D9CDB9; border-radius: 8px; padding: 9px; font-weight: 600; color: #8A6A35">Suggest another time</span>
+</div>
+</div>
+
+<div style="align-self: flex-end; max-width: 70%; background: #DCC9A6; border-radius: 12px 4px 12px 12px; padding: 10px 12px">Thu, 11:00 AM</div>
+
+<div style="align-self: flex-start; max-width: 86%; background: #FFFFFF; border-radius: 4px 12px 12px 12px; padding: 10px 12px">Confirmed: <strong>Thursday, 11:00 AM</strong> at your home in Kokapet. We will remind you the evening before.</div>
+
+<p style="align-self: center; margin: 6px 0 0; font-size: 11px; color: #6B5D4C; background: #F7F3EC; padding: 4px 10px; border-radius: 999px">Wednesday · 6:00 PM</p>
+<div style="align-self: flex-start; max-width: 86%; background: #FFFFFF; border-radius: 4px 12px 12px 12px; padding: 10px 12px">Reminder: Reema will visit tomorrow at 11:00 AM. Reply here if you need to change the time.</div>
+</div>
+
+<footer style="background: #F7F3EC; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; gap: 10px; border-top: 1px solid #D9CDB9">
+<span style="font-size: 12px; color: #6B5D4C">Sent automatically by the MOHH CRM</span>
+<a href="crm.html" style="font-size: 12px; font-weight: 600; text-decoration: none; min-height: 44px; display: inline-flex; align-items: center">Back to CRM</a>
+</footer>
+</div>
+</template>
+<script type="text/x-dc">
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+<script src="js/preact.min.js"></script>
+<script src="js/dc.js"></script>
+</body>
+</html>
